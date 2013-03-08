@@ -592,6 +592,51 @@ $biz72_zhaoshang = array(
 "
 );
 
+$biz72_user = array(
+    "sphinx_db_host" => "192.168.0.111",
+    "sphinx_db_port" => "3322",
+    "sphinx_db_user" => "sphinx",
+    "sphinx_db_password" => "sphinx",
+    "sphinx_db_name" => "biz72_user",
+    
+    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    "mysql_db_host" => "192.168.0.112",
+    "mysql_db_port" => "3301",
+    "mysql_db_user" => "sphinx",
+    "mysql_db_password" => "sphinx",
+    "mysql_db_name" => "biz72_user",
+    
+    "table" => "user_info",
+    "field" => "id",
+    "limit" => 100000,
+    "limit_add" => 10000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
+    "sphinx_distributed" => array(
+        "192.168.0.112:9410:biz72_user_daily" ,
+        "192.168.0.112:9411:biz72_user_1" ,
+        "192.168.0.112:9412:biz72_user_2" ,
+        "192.168.0.112:9413:biz72_user_3" ,
+        "192.168.0.112:9414:biz72_user_4" ,
+        "192.168.0.112:9415:biz72_user_5" ,
+        "192.168.0.112:9416:biz72_user_6"),
+    
+    "search_config_sql" => "
+    sql_query = SELECT id,name,phone,email,tel, \
+                province,city,pub_time,update_time,login_times,last_login_time,status \
+                FROM user_info WHERE id>=\$start AND id<=\$end      
+        
+    sql_range_step  = 2000
+",
+    "search_config_att" => "
+    sql_attr_uint = province    
+    sql_attr_uint = city
+    sql_attr_uint = pub_time
+    sql_attr_uint = update_time
+    sql_attr_uint = login_times
+    sql_attr_uint = last_login_time
+    sql_attr_uint = status
+    
+"
+);
 ?>
 <?php
 //计算每个分布式索引的文档量
