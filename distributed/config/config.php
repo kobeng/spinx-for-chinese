@@ -620,7 +620,7 @@ $biz72_user = array(
         "192.168.0.112:9416:biz72_user_6"),
     
     "search_config_sql" => "
-    sql_query = SELECT id,name,phone,email,tel, \
+    sql_query = SELECT id,name,phone,email,tel,\
                 province,city,pub_time,update_time,login_times,last_login_time,status \
                 FROM user_info WHERE id>=\$start AND id<=\$end      
         
