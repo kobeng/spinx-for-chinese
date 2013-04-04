@@ -5,7 +5,6 @@ spinx_distributed_system_path="/home/sphinx-for-chinese/distributed";
 cd $spinx_distributed_system_path/9400/
 for file in *
 do
-    echo $file;
     result=`php $spinx_distributed_system_path/../shell/truncate_master_temp_table.php $file`;
     eval $result;
 done
