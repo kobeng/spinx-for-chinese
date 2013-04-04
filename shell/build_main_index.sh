@@ -4,7 +4,7 @@ sphinx_bin_path="/usr/local/sphinx-for-chinese/bin"
 index_conf_path="/home/sphinx-for-chinese/distributed"
 
 #清空mysql(master)相关索引的temp表
-cd $spinx_distributed_system_path/9400/
+cd $index_conf_path/9400/
 for file in *
 do
     result=`php $index_conf_path/../shell/truncate_master_temp_table.php $file`;
@@ -34,7 +34,7 @@ function create_main_index()
 
 
 #建立主索引
-cd $spinx_distributed_system_path/main_index/
+cd $index_conf_path/main_index/
 for file in *
 do
     if [ -d $file ]; then
