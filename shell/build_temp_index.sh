@@ -1,11 +1,11 @@
 #!/bin/bash
-log_path="/home/logs/sphinx-for-chinese/create_delta_index.log"
+log_path="/home/logs/sphinx-for-chinese/create_temp_index.log"
 sphinx_bin_path="/usr/local/sphinx-for-chinese/bin"
 index_conf_path="/home/sphinx-for-chinese/distributed"
 
 
 
-function create_merge_delta()
+function create_temp_index()
 {
     echo "-------------------------------------------------------------------" >> $log_path
     echo "Start:" >> $log_path
@@ -29,6 +29,6 @@ function create_merge_delta()
     sleep 3
 }
 
-create_merge_delta;
+create_temp_index;
 
 
