@@ -1,5 +1,5 @@
 #!/bin/bash
-spinx_distributed_system_path="/home/sphinx-for-chinese/etc/distributed";
+spinx_distributed_system_path="/home/sphinx-for-chinese/distributed";
 
 #清空mysql(master)相关索引的temp表
 cd $spinx_distributed_system_path/9400/

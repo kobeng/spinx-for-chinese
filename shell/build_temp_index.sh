@@ -1,7 +1,7 @@
 #!/bin/bash
 log_path="/home/logs/sphinx-for-chinese/create_delta_index.log"
 sphinx_bin_path="/usr/local/sphinx-for-chinese/bin"
-index_conf_path="/home/sphinx-for-chinese/etc/distributed"
+index_conf_path="/home/sphinx-for-chinese/distributed"
 
 
 
