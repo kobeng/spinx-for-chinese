@@ -1,10 +1,10 @@
 <?php
 $globals = array(
-    "count_ports" => 6, //一共有多少个sphinx端口做负载均衡
+    "count_ports" => 3, //一共有多少个sphinx端口做负载均衡
     "index_path" => "/home/sphinx-for-chinese/data",
     "log_path" => "/home/logs/sphinx-for-chinese",
     "searchd_listen_address" => "192.168.0.112",
-    "mpm" => "threads"
+    "mpm" => "prefork"
 );
 
 $biz72_news = array(
@@ -26,13 +26,10 @@ $biz72_news = array(
     "limit" => 400000,
     "limit_add" => 100000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
     "sphinx_distributed" => array(
-        "192.168.0.112:9410:biz72_news_daily" ,
+        "192.168.0.112:9410:biz72_news_temp" ,
         "192.168.0.112:9411:biz72_news_1" ,
         "192.168.0.112:9412:biz72_news_2" ,
-        "192.168.0.112:9413:biz72_news_3" ,
-        "192.168.0.112:9414:biz72_news_4" ,
-        "192.168.0.112:9415:biz72_news_5" ,
-        "192.168.0.112:9416:biz72_news_6"),
+        "192.168.0.112:9413:biz72_news_3"),
     
     "search_config_sql" => "
     sql_query = SELECT id,title,keyword,kind_name,\
@@ -88,13 +85,10 @@ $biz72_product = array(
     "limit" => 1500000,
     "limit_add" => 100000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
     "sphinx_distributed" => array(
-        "192.168.0.112:9410:biz72_product_daily" ,
+        "192.168.0.112:9410:biz72_product_temp" ,
         "192.168.0.112:9411:biz72_product_1" ,
         "192.168.0.112:9412:biz72_product_2" ,
-        "192.168.0.112:9413:biz72_product_3" ,
-        "192.168.0.112:9414:biz72_product_4" ,
-        "192.168.0.112:9415:biz72_product_5" ,
-        "192.168.0.112:9416:biz72_product_6"),
+        "192.168.0.112:9413:biz72_product_3" ),
     
     "search_config_sql" => "
     sql_query = SELECT id,title,keyword,com_name, \
@@ -149,13 +143,10 @@ $biz72_company = array(
     "limit" => 1000000,
     "limit_add" => 100000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
     "sphinx_distributed" => array(
-        "192.168.0.112:9410:biz72_company_daily" ,
+        "192.168.0.112:9410:biz72_company_temp" ,
         "192.168.0.112:9411:biz72_company_1" ,
         "192.168.0.112:9412:biz72_company_2" ,
-        "192.168.0.112:9413:biz72_company_3" ,
-        "192.168.0.112:9414:biz72_company_4" ,
-        "192.168.0.112:9415:biz72_company_5" ,
-        "192.168.0.112:9416:biz72_company_6"),
+        "192.168.0.112:9413:biz72_company_3"),
     
     "search_config_sql" => "
     sql_query = SELECT id,status,com_name,pub_time,update_time, \
@@ -207,13 +198,10 @@ $biz72_price = array(
     "limit" => 300000,
     "limit_add" => 100000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
     "sphinx_distributed" => array(
-        "192.168.0.112:9410:biz72_price_daily" ,
+        "192.168.0.112:9410:biz72_price_temp" ,
         "192.168.0.112:9411:biz72_price_1" ,
         "192.168.0.112:9412:biz72_price_2" ,
-        "192.168.0.112:9413:biz72_price_3" ,
-        "192.168.0.112:9414:biz72_price_4" ,
-        "192.168.0.112:9415:biz72_price_5" ,
-        "192.168.0.112:9416:biz72_price_6"),
+        "192.168.0.112:9413:biz72_price_3"),
     
     "search_config_sql" => "
     sql_query = SELECT id,name,title, \
@@ -256,13 +244,10 @@ $biz72_law = array(
     "limit" => 10000,
     "limit_add" => 1000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
     "sphinx_distributed" => array(
-        "192.168.0.112:9410:biz72_law_daily" ,
+        "192.168.0.112:9410:biz72_law_temp" ,
         "192.168.0.112:9411:biz72_law_1" ,
         "192.168.0.112:9412:biz72_law_2" ,
-        "192.168.0.112:9413:biz72_law_3" ,
-        "192.168.0.112:9414:biz72_law_4" ,
-        "192.168.0.112:9415:biz72_law_5" ,
-        "192.168.0.112:9416:biz72_law_6"),
+        "192.168.0.112:9413:biz72_law_3"),
     
     "search_config_sql" => "
     sql_query = SELECT id,title,keyword,kind_name, \
@@ -304,13 +289,10 @@ $biz72_expo = array(
     "limit" => 10000,
     "limit_add" => 1000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
     "sphinx_distributed" => array(
-        "192.168.0.112:9410:biz72_expo_daily" ,
+        "192.168.0.112:9410:biz72_expo_temp" ,
         "192.168.0.112:9411:biz72_expo_1" ,
         "192.168.0.112:9412:biz72_expo_2" ,
-        "192.168.0.112:9413:biz72_expo_3" ,
-        "192.168.0.112:9414:biz72_expo_4" ,
-        "192.168.0.112:9415:biz72_expo_5" ,
-        "192.168.0.112:9416:biz72_expo_6"),
+        "192.168.0.112:9413:biz72_expo_3"),
     
     "search_config_sql" => "
     sql_query = SELECT id, title,trade,addr, \
@@ -360,13 +342,11 @@ $biz72_buy = array(
     "limit" => 10000,
     "limit_add" => 1000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
     "sphinx_distributed" => array(
-        "192.168.0.112:9410:biz72_buy_daily" ,
+        "192.168.0.112:9410:biz72_buy_temp" ,
         "192.168.0.112:9411:biz72_buy_1" ,
         "192.168.0.112:9412:biz72_buy_2" ,
-        "192.168.0.112:9413:biz72_buy_3" ,
-        "192.168.0.112:9414:biz72_buy_4" ,
-        "192.168.0.112:9415:biz72_buy_5" ,
-        "192.168.0.112:9416:biz72_buy_6"),
+        "192.168.0.112:9413:biz72_buy_3" 
+    ),
     
     "search_config_sql" => "
     sql_query = SELECT id, buy_product,title,keyword,com_name, \
@@ -417,13 +397,11 @@ $biz72_contract = array(
     "limit" => 10000,
     "limit_add" => 1000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
     "sphinx_distributed" => array(
-        "192.168.0.112:9410:biz72_contract_daily" ,
+        "192.168.0.112:9410:biz72_contract_temp" ,
         "192.168.0.112:9411:biz72_contract_1" ,
         "192.168.0.112:9412:biz72_contract_2" ,
         "192.168.0.112:9413:biz72_contract_3" ,
-        "192.168.0.112:9414:biz72_contract_4" ,
-        "192.168.0.112:9415:biz72_contract_5" ,
-        "192.168.0.112:9416:biz72_contract_6"),
+        ),
     
     "search_config_sql" => "
     sql_query = SELECT id, title,keyword,kind_name, \
@@ -465,13 +443,11 @@ $biz72_baikeask = array(
     "limit" => 10000,
     "limit_add" => 1000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
     "sphinx_distributed" => array(
-        "192.168.0.112:9410:biz72_baikeask_daily" ,
+        "192.168.0.112:9410:biz72_baikeask_temp" ,
         "192.168.0.112:9411:biz72_baikeask_1" ,
         "192.168.0.112:9412:biz72_baikeask_2" ,
         "192.168.0.112:9413:biz72_baikeask_3" ,
-        "192.168.0.112:9414:biz72_baikeask_4" ,
-        "192.168.0.112:9415:biz72_baikeask_5" ,
-        "192.168.0.112:9416:biz72_baikeask_6"),
+        ),
     
     "search_config_sql" => "
     sql_query = SELECT id,title,com_name, \
@@ -511,13 +487,11 @@ $biz72_baikeinfo = array(
     "limit" => 10000,
     "limit_add" => 1000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
     "sphinx_distributed" => array(
-        "192.168.0.112:9410:biz72_baikeinfo_daily" ,
+        "192.168.0.112:9410:biz72_baikeinfo_temp" ,
         "192.168.0.112:9411:biz72_baikeinfo_1" ,
         "192.168.0.112:9412:biz72_baikeinfo_2" ,
         "192.168.0.112:9413:biz72_baikeinfo_3" ,
-        "192.168.0.112:9414:biz72_baikeinfo_4" ,
-        "192.168.0.112:9415:biz72_baikeinfo_5" ,
-        "192.168.0.112:9416:biz72_baikeinfo_6"),
+        ),
     
     "search_config_sql" => "
     sql_query = SELECT id,title,keyword,com_name, \
@@ -559,13 +533,11 @@ $biz72_zhaoshang = array(
     "limit" => 10000,
     "limit_add" => 1000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
     "sphinx_distributed" => array(
-        "192.168.0.112:9410:biz72_zhaoshang_daily" ,
+        "192.168.0.112:9410:biz72_zhaoshang_temp" ,
         "192.168.0.112:9411:biz72_zhaoshang_1" ,
         "192.168.0.112:9412:biz72_zhaoshang_2" ,
         "192.168.0.112:9413:biz72_zhaoshang_3" ,
-        "192.168.0.112:9414:biz72_zhaoshang_4" ,
-        "192.168.0.112:9415:biz72_zhaoshang_5" ,
-        "192.168.0.112:9416:biz72_zhaoshang_6"),
+        ),
     
     "search_config_sql" => "
     sql_query = SELECT id,title,com_name, \
@@ -611,13 +583,11 @@ $biz72_user = array(
     "limit" => 100000,
     "limit_add" => 10000, //如果文档总量已经超过 （$limit * $globals["count_ports"]），那么把这个值叠加到$limit 重新计算每个索引的分布式文档量
     "sphinx_distributed" => array(
-        "192.168.0.112:9410:biz72_user_daily" ,
+        "192.168.0.112:9410:biz72_user_temp" ,
         "192.168.0.112:9411:biz72_user_1" ,
         "192.168.0.112:9412:biz72_user_2" ,
         "192.168.0.112:9413:biz72_user_3" ,
-        "192.168.0.112:9414:biz72_user_4" ,
-        "192.168.0.112:9415:biz72_user_5" ,
-        "192.168.0.112:9416:biz72_user_6"),
+        ),
     
     "search_config_sql" => "
     sql_query = SELECT id,name,phone,email,tel,\
