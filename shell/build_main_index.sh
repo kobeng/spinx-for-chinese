@@ -38,7 +38,7 @@ cd $index_conf_path/main_index/
 for file in *
 do
     if [ -d $file ]; then
-        create_main_index $files
+        create_main_index $file
     fi
 done
 
