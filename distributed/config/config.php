@@ -14,7 +14,7 @@ $biz72_news = array(
     "sphinx_db_password" => "sphinx",
     "sphinx_db_name" => "biz72_news",
     
-    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    //为了可以清空主库的相关索引temp表的数据
     "mysql_db_host" => "192.168.0.112",
     "mysql_db_port" => "3301",
     "mysql_db_user" => "sphinx",
@@ -73,7 +73,7 @@ $biz72_product = array(
     "sphinx_db_password" => "sphinx",
     "sphinx_db_name" => "biz72_product",
     
-    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    //为了可以清空主库的相关索引temp表的数据
     "mysql_db_host" => "192.168.0.112",
     "mysql_db_port" => "3301",
     "mysql_db_user" => "sphinx",
@@ -131,7 +131,7 @@ $biz72_company = array(
     "sphinx_db_password" => "sphinx",
     "sphinx_db_name" => "biz72_company",
     
-    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    //为了可以清空主库的相关索引temp表的数据
     "mysql_db_host" => "192.168.0.112",
     "mysql_db_port" => "3301",
     "mysql_db_user" => "sphinx",
@@ -186,7 +186,7 @@ $biz72_price = array(
     "sphinx_db_password" => "sphinx",
     "sphinx_db_name" => "biz72_price",
     
-    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    //为了可以清空主库的相关索引temp表的数据
     "mysql_db_host" => "192.168.0.112",
     "mysql_db_port" => "3301",
     "mysql_db_user" => "sphinx",
@@ -232,7 +232,7 @@ $biz72_law = array(
     "sphinx_db_password" => "sphinx",
     "sphinx_db_name" => "biz72_news",
     
-    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    //为了可以清空主库的相关索引temp表的数据
     "mysql_db_host" => "192.168.0.112",
     "mysql_db_port" => "3301",
     "mysql_db_user" => "sphinx",
@@ -277,7 +277,7 @@ $biz72_expo = array(
     "sphinx_db_password" => "sphinx",
     "sphinx_db_name" => "biz72_expo",
     
-    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    //为了可以清空主库的相关索引temp表的数据
     "mysql_db_host" => "192.168.0.112",
     "mysql_db_port" => "3301",
     "mysql_db_user" => "sphinx",
@@ -330,7 +330,7 @@ $biz72_buy = array(
     "sphinx_db_password" => "sphinx",
     "sphinx_db_name" => "biz72_buy",
     
-    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    //为了可以清空主库的相关索引temp表的数据
     "mysql_db_host" => "192.168.0.112",
     "mysql_db_port" => "3301",
     "mysql_db_user" => "sphinx",
@@ -385,7 +385,7 @@ $biz72_contract = array(
     "sphinx_db_password" => "sphinx",
     "sphinx_db_name" => "biz72_news",
     
-    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    //为了可以清空主库的相关索引temp表的数据
     "mysql_db_host" => "192.168.0.112",
     "mysql_db_port" => "3301",
     "mysql_db_user" => "sphinx",
@@ -431,7 +431,7 @@ $biz72_baikeask = array(
     "sphinx_db_password" => "sphinx",
     "sphinx_db_name" => "biz72_baike",
     
-    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    //为了可以清空主库的相关索引temp表的数据
     "mysql_db_host" => "192.168.0.112",
     "mysql_db_port" => "3301",
     "mysql_db_user" => "sphinx",
@@ -475,7 +475,7 @@ $biz72_baikeinfo = array(
     "sphinx_db_password" => "sphinx",
     "sphinx_db_name" => "biz72_baike",
     
-    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    //为了可以清空主库的相关索引temp表的数据
     "mysql_db_host" => "192.168.0.112",
     "mysql_db_port" => "3301",
     "mysql_db_user" => "sphinx",
@@ -521,7 +521,7 @@ $biz72_zhaoshang = array(
     "sphinx_db_password" => "sphinx",
     "sphinx_db_name" => "biz72_zhaoshang",
     
-    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    //为了可以清空主库的相关索引temp表的数据
     "mysql_db_host" => "192.168.0.112",
     "mysql_db_port" => "3301",
     "mysql_db_user" => "sphinx",
@@ -571,7 +571,7 @@ $biz72_user = array(
     "sphinx_db_password" => "sphinx",
     "sphinx_db_name" => "biz72_user",
     
-    //建立daily索引，从主库去生成，这样为了可以清空主库的相关索引temp表的数据
+    //为了可以清空主库的相关索引temp表的数据
     "mysql_db_host" => "192.168.0.112",
     "mysql_db_port" => "3301",
     "mysql_db_user" => "sphinx",
